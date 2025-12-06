@@ -15,7 +15,7 @@
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/kshetrin.png",
-        "backgroundImage": "./assets/images/kshetrin-background.png",
+        "backgroundImage": "./assets/images/kshetrin.png",
         "monochromeImage": "./assets/images/kshetrin.png"
       },
       "edgeToEdgeEnabled": true,
