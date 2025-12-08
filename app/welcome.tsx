@@ -9,11 +9,11 @@ const Welcome = () => {
     return (
         <View className=''>
             <ImageBackground
+                blurRadius={2}
                 className=' min-w-screen w-full min-h-screen flex-1 justify-center items-center gap-5 px-5'
                 source={heroBg}
-
             >
-                <View className='absolute inset-0 bg-green-600/70' />
+                <View className='absolute inset-0 bg-green-700/50' />
 
                 <Image
                     source={require('../assets/images/kshetrin.png')}

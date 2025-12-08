@@ -20,8 +20,10 @@ import {
   ArrowRight 
 } from 'lucide-react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { useRouter } from 'expo-router';
 
 const Home = () => {
+    const router = useRouter();
   return (
     <SafeAreaProvider style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor="#F8F9FA" />
@@ -111,6 +113,11 @@ const Home = () => {
           <Text style={styles.sectionTitle}>Recent Readings</Text>
           <Text style={styles.sectionSubtitle}>Latest sensor data from your farm</Text>
         </View>
+        <View >
+            <TouchableOpacity onPress={()=>{router.push('/welcome')}}>
+                <Text className='text-green-600 text-sm mb-4'> Back to Dashboard</Text>
+            </TouchableOpacity>
+        </View>
 
         <View style={styles.readingsList}>
           <ReadingRow 
@@ -156,7 +163,7 @@ const MetricCard = ({ title, value, unit, icon, bgColor, iconBgColor, actionIcon
       <View style={styles.valueContainer}>
         <Text style={styles.cardValue}>{value}</Text>
         <Text style={styles.cardUnit}>{unit}</Text>
-      </View>
+      </View> 
     </View>
   </View>
 );
