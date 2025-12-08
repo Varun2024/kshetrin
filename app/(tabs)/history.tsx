@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const market = () => {
+const history = () => {
   return (
     <View>
-      <Text>market</Text>
+      <Text>history</Text>
     </View>
   )
 }
 
-export default market
+export default history
