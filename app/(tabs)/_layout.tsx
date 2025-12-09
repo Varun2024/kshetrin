@@ -1,7 +1,7 @@
 import { View } from 'react-native'
 import React from 'react'
 import { Tabs } from 'expo-router'
-import { Folder, Home, Network, Store } from 'lucide-react-native'
+import { Folder, Home, MemoryStick, Network, Rocket, Scan, Store } from 'lucide-react-native'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 
 
@@ -14,7 +14,7 @@ const _layout = () => {
                     options={{
                         title: "Home",
                         headerShown: false,
-                        tabBarIcon: ({ color, size }) => (
+                        tabBarIcon: () => (
                             <View className='isize-full justify-center items-center'>
                                 <Home size={24} />
                             </View>
@@ -23,9 +23,9 @@ const _layout = () => {
                 <Tabs.Screen
                     name="history"
                     options={{
-                        title: "History",
+                        title: "Khata",
                         headerShown: false,
-                        tabBarIcon: ({ color, size }) => (
+                        tabBarIcon: () => (
                             <View className='isize-full justify-center items-center'>
                                 <Folder size={24} />
                             </View>
@@ -36,9 +36,9 @@ const _layout = () => {
                     options={{
                         title: "Pairing",
                         headerShown: false,
-                        tabBarIcon: ({ color, size }) => (
+                        tabBarIcon: () => (
                             <View className='isize-full justify-center items-center'>
-                                <Network size={24} />
+                                <Scan size={24} />
                             </View>
                         ),
                     }} />

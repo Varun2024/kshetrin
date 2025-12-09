@@ -20,7 +20,8 @@ import {
     Maximize2,
     ArrowRight,
     MapPin,
-    Menu
+    Menu,
+    Leaf
 } from 'lucide-react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
@@ -83,13 +84,13 @@ const Home = () => {
 
                 <ScrollView
                     contentContainerClassName="p-4"
-                    showsVerticalScrollIndicator={false}
+                    showsVerticalScrollIndicator={false}    
                 >
                     {/* Header Section */}
-                    <View className="flex-row gap-4 items-center justify-between mb-6">
-                        <Menu size={24} />
+                    <View className="flex-row gap-4 items-center justify-between mb-6 bg-green-400 p-5 rounded-3xl ">
+                        {/* <Menu size={24} /> */}
                         <View className="flex-1 px-3">
-                            <Text className="text-2xl font-bold text-gray-900 mt-5">Farm Overview</Text>
+                            <Text className="text-2xl font-bold text-gray-900 flex-row items-center">Farm Overview <Leaf size={18} color={'green'} /></Text>
                             <Text className="text-sm text-gray-500 mt-1">Monitor your agricultural sensors</Text>
                         </View>
 
@@ -106,23 +107,24 @@ const Home = () => {
                             onChangeText={handleTextDebouce}
                             placeholderTextColor={'lightgray'}
                             placeholder="Search your city"
-                            className="mb-4 p-2 border border-gray-300 rounded" />
+                            className="mb-4 py-4 border border-gray-300 rounded-lg " 
+                            />
                     </View>
 
                     {/* Search results list (visible only when weatherData has items) */}
                     {Array.isArray(weatherData) && weatherData.length > 0 && (
-                        <View className="relative w-full bg-gray-200/60 gap-5 rounded-3xl p-5 mb-2 flex-col justify-between items-start z-10">
+                        <View className="relative w-full bg-gray-200/60 gap-4 rounded-3xl p-5 mb-2 flex-col justify-between items-start z-10">
                             {weatherData.filter(Boolean).map((item, index) => {
                                 return (
                                     <TouchableOpacity
                                         key={item?.name + index}
-                                        className={`flex-row items-center gap-3 pb-3 mb-3`}
+                                        className={`flex-row items-center gap-3 py-2 w-full ${index < weatherData.length - 1 ? 'border-b border-gray-300' : ''}`}
                                         onPress={() => handleSelectResult(item)} // <-- select handler
                                     >
                                         <MapPin color="#333" size={22} />
 
-                                        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
-                                            <Text className="text-base font-semibold ">
+                                        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 2 }}>
+                                            <Text className="text-sm ">
                                                 {item?.name}, {item?.country}
                                             </Text>
                                         </View>
