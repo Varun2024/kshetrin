@@ -1,7 +1,7 @@
 import { View } from 'react-native'
 import React from 'react'
 import { Tabs } from 'expo-router'
-import { Folder, Home, MemoryStick, Network, Rocket, Scan, Store } from 'lucide-react-native'
+import { Book, Folder, Home,} from 'lucide-react-native'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 
 
@@ -34,11 +34,11 @@ const _layout = () => {
                 <Tabs.Screen
                     name="pairing"
                     options={{
-                        title: "Pairing",
+                        title: "AgroBase",
                         headerShown: false,
                         tabBarIcon: () => (
                             <View className='isize-full justify-center items-center'>
-                                <Scan size={24} />
+                                <Book size={24} />
                             </View>
                         ),
                     }} />
