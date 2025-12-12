@@ -28,12 +28,13 @@ import { debounce } from 'lodash';
 import fetchWeatherData from '@/api/weather'
 import MetricCard from '@/components/MetricCard';
 import AIInsights from '@/components/AIInsights';
-
+import { useNpk } from "@/context/DataContext";
 const Home = () => {
     const router = useRouter();
     const [weatherData, setWeatherData] = React.useState<any[]>([]);
     const [selectedWeather, setSelectedWeather] = React.useState<any | null>(null); // <-- selected city
     const [showingAIInsight, setShowingAIInsight] = React.useState<boolean>(false);
+    const { sensorData: globalSensorData } = useNpk();
     const normalizeWeather = (apiData: any) => {
         if (!apiData?.location) return null;
         const icon = apiData.current?.condition?.icon ?? '';
@@ -50,7 +51,7 @@ const Home = () => {
     };
 
 
-    const handleSearch = (value : string) => {
+    const handleSearch = (value: string) => {
         if (!value || value.length <= 2) {
             // clear results when query too short
             setWeatherData([]);
@@ -80,9 +81,9 @@ const Home = () => {
         // optionally clear input if you track it
     };
     const dummyData = {
-        N: { value: 30, unit: "mg_per_m2" },
-        P2O5: { value: 15, unit: "mg_per_m2" },
-        K2O: { value: 20, unit: "mg_per_m2" }
+        N: { value: globalSensorData.n, unit: "mg_per_m2" },
+        P2O5: { value: globalSensorData.p, unit: "mg_per_m2" },
+        K2O: { value: globalSensorData.k, unit: "mg_per_m2" }
     };
 
     return (

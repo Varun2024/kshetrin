@@ -26,9 +26,12 @@
 
 import { Stack } from "expo-router";
 import "./globals.css";
+import { DataProvider } from "@/context/DataContext";
 export default function RootLayout() {
-  return <Stack >
-    <Stack.Screen name="welcome" options={{ headerShown: false }} />
-    <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-  </Stack>;
+  return <DataProvider>
+    <Stack >
+      <Stack.Screen name="welcome" options={{ headerShown: false }} />
+      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+    </Stack>;
+  </DataProvider>
 }
