@@ -20,7 +20,6 @@ import {
   AlertTriangle,
   Stethoscope,
   ShieldAlert,
-  Droplets
 } from 'lucide-react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 

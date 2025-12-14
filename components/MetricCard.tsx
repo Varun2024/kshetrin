@@ -15,7 +15,7 @@ const MetricCard = ({ title, value, unit, icon, bgColor, iconBgColor, actionIcon
     const [fetchedValue, setFetchedValue] = React.useState<string | null>(null);
     const [loading, setLoading] = React.useState(false);
     const [error, setError] = React.useState<string | null>(null);
-    const { setSensorData } = useNpk();
+    const { setSensorData } = useNpk() as { setSensorData?: (value: string) => void };
 
     // store main-device npk (from read-now)
     const [latestNpk, setLatestNpk] = React.useState<{ n: number | null; p: number | null; k: number | null } | null>(null);
@@ -206,7 +206,9 @@ const MetricCard = ({ title, value, unit, icon, bgColor, iconBgColor, actionIcon
 
             if (val !== null && val !== undefined && !isNaN(val)) {
                 setFetchedValue(Number.isInteger(val) ? String(val) : String(val));
-                setSensorData(Number.isInteger(val) ? String(val) : String(val))
+                if (typeof setSensorData === "function") {
+                    setSensorData(Number.isInteger(val) ? String(val) : String(val));
+                }
             } else {
                 setFetchedValue(null);
                 setError("metric not found in payload");
