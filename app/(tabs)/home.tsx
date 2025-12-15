@@ -34,7 +34,9 @@ const Home = () => {
     const [weatherData, setWeatherData] = React.useState<any[]>([]);
     const [selectedWeather, setSelectedWeather] = React.useState<any | null>(null); // <-- selected city
     const [showingAIInsight, setShowingAIInsight] = React.useState<boolean>(false);
-    const { sensorData: globalSensorData } = useNpk();
+    // cast to any and provide a safe default shape to avoid type errors when context typing is missing
+    const context = useNpk() as any;
+    const globalSensorData = context?.sensorData ?? { n: 0, p: 0, k: 0 };
     const normalizeWeather = (apiData: any) => {
         if (!apiData?.location) return null;
         const icon = apiData.current?.condition?.icon ?? '';
