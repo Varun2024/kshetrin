@@ -1,50 +1,109 @@
-# Welcome to your Expo app 👋
+# Kshetrin (Frontend) 🌾📱
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Kshetrin is the **frontend application** for an agri-tech solution built during **Smart India Hackathon (SIH) 2025**.  
+It provides a responsive interface for farmers and stakeholders to interact with soil analysis, recommendations, and irrigation insights powered by the backend API.
 
-## Get started
+---
 
-1. Install dependencies
+## 🚀 Project Overview
 
-   ```bash
-   npm install
-   ```
+Kshetrin frontend is a **React/Expo based application** designed to:
 
-2. Start the app
+- Collect user inputs such as soil nutrient values and field details  
+- Display **data-driven recommendations** from the backend  
+- Support future mobile and web usage (Expo framework)  
+- Provide a clean, intuitive, and responsive UI
 
-   ```bash
-   npx expo start
-   ```
+The frontend connects with the **Kshetrin Backend** API to fetch recommendations and display insights in real time.
 
-In the output, you'll find options to open the app in a
+---
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## 🎯 Features
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- 📥 Input forms for soil data submission  
+- 🔄 Integration with backend APIs for analysis  
+- 📊 Display of recommendation results  
+- 📱 Designed using React and Expo for cross-platform compatibility  
+- 🧩 Modular, reusable components for scalable UI
 
-## Get a fresh project
+---
 
-When you're ready, run:
+## 🛠 Tech Stack
+
+- **Framework:** React / Expo  
+- **Languages:** TypeScript, JavaScript  
+- **UI:** Tailwind CSS (with NativeWind)  
+- **Navigation:** Expo Router  
+- **State Management:** React Context / Hooks  
+- **Build Tools:** Metro Bundler (default for React Native + Expo)  
+- **Deployment:** Expo Go / EAS  
+
+---
+
+## 💡 Getting Started
+
+Follow these steps to run the app locally:
+
+### 1. Clone the repository
 
 ```bash
-npm run reset-project
+git clone https://github.com/Varun2024/kshetrin.git
+cd kshetrin
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 🧠 App Structure
+📁 app
+├── assets/              # Images, icons, fonts
+├── components/          # Reusable UI components
+├── constants/           # App constants and config
+├── context/             # React context providers (state management)
+├── hooks/               # Custom hooks
+├── screens/             # App screens & views
+└── utils/               # Utility functions
 
-## Learn more
+### 🔗 API Integration
+The frontend expects an API server (Kshetrin backend) running with the following endpoints:
 
-To learn more about developing your project with Expo, look at the following resources:
+| Endpoint              | Method | Functionality                      |
+| --------------------- | ------ | ---------------------------------- |
+| `/soil-data`          | POST   | Send soil nutrient data            |
+| `/recommendations`    | GET    | Receive irrigation recommendations |
+| `/irrigation-control` | POST   | Trigger irrigation instructions    |
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### 📱 Why Expo?
+Expo simplifies mobile app development by providing:
+- Fast development previews with Expo Go
+- Managed workflow without heavy native config
+- OTA update
+- Built-in support for permissions and device APIs
+This makes Kshetrin easier to develop, test, and scale across devices.
 
-## Join the community
+### 🌱 Future Improvements
 
-Join our community of developers creating universal apps.
+- Auth flow for farmer/user accounts
+- Offline data storage
+- Better result visualization (charts, graphs)
+- Multi-language support
+- Deployment via EAS for production builds
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+### 🙌 Acknowledgements
+
+Huge thanks to
+Our SIH 2025 teammates for collaboration
+Our mentor for guidance and support
+The Smart India Hackathon platform for the opportunity
+
+### ⭐ Show Some Love
+
+If you find this repository helpful, give it a star!
+It keeps me motivated to build more meaningful solutions 🙌
+
+---
+
+If you want, I can also generate:
+✅ A **combined frontend + backend README**  
+✅ **API docs (Swagger/OpenAPI) section**  
+✅ **Screenshots and UI previews** for the README  
+
+Just let me know what style you prefer! 🚀 
+
