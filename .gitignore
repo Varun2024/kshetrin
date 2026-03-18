@@ -44,3 +44,5 @@ app-example
 
 
 .env
+
+/constants/apiKey.ts
